@@ -1,7 +1,7 @@
 final String tableCartProduct = 'cartProduct';
 final String columnName = 'name';
 final String columnImage= 'image';
-final String columnQuantity= 'Quantity';
+final String columnQuantity= 'quantity';
 final String columnPrice = 'price';
 final String columnProductID = 'productID';
 

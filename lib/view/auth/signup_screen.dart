@@ -40,7 +40,7 @@ class SignUpView extends GetWidget<AuthViewModel> {
                         child: CustomText(
                         text: 'LogIn',
                         fontSize: 18,
-                        color: Colors.green,
+                        color: Colors.lightBlue[800],
                       ),
                     ),
                   ],
@@ -113,7 +113,7 @@ class SignUpView extends GetWidget<AuthViewModel> {
                         controller.signUp();
                       }
                     },
-                    color: Colors.green,
+                    color: Colors.lightBlue[800],
                     padding: EdgeInsets.all(16),
                     child: CustomText(
                       text: 'SIGN UP',

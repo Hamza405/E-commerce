@@ -184,7 +184,7 @@ class HomePage extends StatelessWidget {
                           height: height * 0.025,
                           width: width * 0.4,
                           child: CustomText(
-                            color: Colors.green,
+                            color: Colors.lightBlue[800],
                             text:
                                 '\$ ${controller.productModel[index].price.toString()}',
                             // alignment:Alignment.bottomLeft,

@@ -125,7 +125,7 @@ class DetailsView extends StatelessWidget {
                         text: 'Price',
                         color:Colors.grey[400],
                       ),
-                      CustomText(text: '${model.price} \$',color: Colors.green,)
+                      CustomText(text: '${model.price} \$',color: Colors.lightBlue[800],)
                     ],
                   ),
                   GetBuilder<CartViewModel>(
@@ -149,7 +149,7 @@ class DetailsView extends StatelessWidget {
                                 )
                               );
                           },
-                            color: Colors.green,
+                            color: Colors.lightBlue[800],
                             padding: EdgeInsets.all(16),
                             child: CustomText(
                               alignment: Alignment.center,

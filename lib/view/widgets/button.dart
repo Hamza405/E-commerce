@@ -22,7 +22,7 @@ class AuthButton extends StatelessWidget {
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         onPressed: onPressed,
-        color: Colors.green,
+        color: Colors.lightBlue[800],
         padding: EdgeInsets.all(16),
         child: CustomText(
           text: text,

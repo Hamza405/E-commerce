@@ -20,10 +20,11 @@ class MyApp extends StatelessWidget {
     
     return GetMaterialApp(
       initialBinding: Binding(),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           brightness: Brightness.light,
-          primaryColor: Colors.green,
-          accentColor: Colors.green),
+          primaryColor: Colors.lightBlue[800],
+          accentColor: Colors.lightBlue[800]),
       home: ControlView(),
     );
   }

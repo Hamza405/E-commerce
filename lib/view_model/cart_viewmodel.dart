@@ -1,7 +1,7 @@
 import 'package:e_c/model/cart_prouct_model.dart';
 import 'package:e_c/serves/database/cart_database_helper.dart';
 import 'package:flutter/foundation.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
 
 class CartViewModel extends GetxController {
   ValueNotifier<bool> get loading => _loading;
@@ -15,6 +15,7 @@ class CartViewModel extends GetxController {
    var dbHelper = CartDatabaseHelper.db;
 
   CartViewModel() {
+    
     getAllProduct();
   }
 
@@ -27,10 +28,11 @@ class CartViewModel extends GetxController {
     update();
   }
   getTotalPrice() {
-    // for (int i = 0; i < _cartproductModel.length; i++) {
-    //   _totalPrice += (double.parse(_cartproductModel[i].price) *
-    //       _cartproductModel[i].quantity);
-    // }
+    for (int i = 0; i < _cartproductModel.length; i++) {
+      _totalPrice = 0;
+      _totalPrice += (double.parse(_cartproductModel[i].price) *
+          _cartproductModel[i].quantity);
+    }
     print(_totalPrice);
     update();
   }
@@ -46,6 +48,7 @@ class CartViewModel extends GetxController {
     _cartproductModel.add(cartProductModel);
     _totalPrice += (double.parse(cartProductModel.price) *
           cartProductModel.quantity);
+    Get.snackbar( "successfully",'Product has been added successfully');  
 
     update();
   }
@@ -62,6 +65,17 @@ class CartViewModel extends GetxController {
     _totalPrice -= double.parse(_cartproductModel[index].price);
     await dbHelper.updateProduct(_cartproductModel[index]);
           update();
+  }
+
+  deleteProduct(CartProductModel model)async{
+    _totalPrice -= (double.parse(model.price) *
+          model.quantity);
+    dbHelper.deleteProduct(model);
+    // getAllProduct(); 
+    // getTotalPrice();
+    
+    update();
+    Get.snackbar('success', 'Product has been deleted from your cart');
   }
 
   

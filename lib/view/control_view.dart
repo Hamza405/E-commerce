@@ -1,4 +1,5 @@
 import 'package:e_c/view/auth/login_screen.dart';
+import 'package:e_c/view/widgets/customText.dart';
 import 'package:e_c/view_model/auth_view_model.dart';
 import 'package:e_c/view_model/controle_view_model.dart';
 import 'package:get/get.dart';
@@ -30,23 +31,19 @@ class ControlView extends GetWidget<AuthViewModel>{
             items: [
               BottomNavigationBarItem(
                 label: '',
-                icon: Icon(
-                  Icons.search_off_rounded,
-                ),
-                activeIcon: Text('Explorer'),
+                icon: Icon(Icons.home),
+                activeIcon: CustomText(text:'Home',color: Colors.lightBlue[800],alignment: Alignment.center,fontWeight: FontWeight.bold),
               ),
               BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.call_end,
-                  ),
-                  activeIcon: Text('Cart'),
+                  icon: ImageIcon(AssetImage('assets/cartt.png')),
+                  activeIcon: CustomText(text:'Cart',color: Colors.lightBlue[800],alignment: Alignment.center,fontWeight: FontWeight.bold),
                   label: ''),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.person,
                 ),
                 label: '',
-                activeIcon: Text('Account'),
+                activeIcon: CustomText(text:'Account',color: Colors.lightBlue[800],alignment: Alignment.center,fontWeight: FontWeight.bold,),
               ),
             ],
             currentIndex: controller.navigatorValue,
