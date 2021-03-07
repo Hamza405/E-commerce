@@ -42,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                           GestureDetector(
                             onTap:()=>Get.off(SignUpView()),
                             child: CustomText(
-                              text: 'Sign Up',
+                              text: 'SignUp',
                               fontSize: 18,
                               color: Colors.lightBlue[800],
                             ),
@@ -66,6 +66,7 @@ class LoginScreen extends StatelessWidget {
                               onSaved: (value) {
                                 controller.email = value;
                               },
+                              keyboardType:TextInputType.emailAddress,
                               decoration: InputDecoration(
                                   labelText: 'Email',
                                   hintText: 'examper@exampel.com',
@@ -84,11 +85,14 @@ class LoginScreen extends StatelessWidget {
                               onSaved: (value) {
                                 controller.password = value;
                               },
+                              
                           decoration: InputDecoration(
                               labelText: 'Password',
                               hintText: '*******',
+                              
                               hintStyle: TextStyle(color: Colors.grey)),
                           obscureText: true,
+                          
                         ),
                           
                         
@@ -119,7 +123,7 @@ class LoginScreen extends StatelessWidget {
                           padding: EdgeInsets.all(16),
                           child: CustomText(
                             alignment: Alignment.center,
-                            text: 'SIGN UP',
+                            text: 'LOGIN',
                             color: Colors.white,
                             fontSize: 14,
                           ),

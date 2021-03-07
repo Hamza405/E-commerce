@@ -68,6 +68,7 @@ class SignUpView extends GetWidget<AuthViewModel> {
                   height: 20,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value == null) {
                       print('error');
@@ -100,7 +101,7 @@ class SignUpView extends GetWidget<AuthViewModel> {
                   obscureText: true,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 Container(
                   width: double.infinity,
@@ -115,10 +116,13 @@ class SignUpView extends GetWidget<AuthViewModel> {
                     },
                     color: Colors.lightBlue[800],
                     padding: EdgeInsets.all(16),
-                    child: CustomText(
-                      text: 'SIGN UP',
-                      color: Colors.white,
-                      fontSize: 14,
+                    
+                      child: CustomText(
+                        alignment: Alignment.center,
+                        text: 'SIGN UP',
+                        color: Colors.white,
+                        fontSize: 14,
+                      
                     ),
                   ),
                 ),
